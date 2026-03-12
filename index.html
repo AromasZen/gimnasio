@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitGym - Tu Gimnasio Digital</title>
+  <meta name="description" content="Plataforma digital para gimnasios. Generá rutinas personalizadas, gestioná alumnos y usá calculadoras fitness." />
+  <link rel="icon" type="image/x-icon" href="https://public-frontend-cos.metadl.com/mgx/img/favicon_atoms.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-logo" onclick="navigate('home')">
+      🏋️ FIT<span>GYM</span>
+    </div>
+    <nav class="header-nav" id="desktopNav">
+      <a href="#" data-page="home">Inicio</a>
+      <a href="#" data-page="encuesta">Encuesta</a>
+      <a href="#" data-page="calculadora">Calculadora</a>
+      <a href="#" data-page="dashboard">Mi Panel</a>
+      <a href="#" data-page="entrenador">Entrenador</a>
+    </nav>
+    <button class="header-menu-btn" onclick="toggleMobileNav()">☰</button>
+  </header>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#" data-page="home">Inicio</a>
+    <a href="#" data-page="encuesta">Encuesta</a>
+    <a href="#" data-page="calculadora">Calculadora</a>
+    <a href="#" data-page="dashboard">Mi Panel</a>
+    <a href="#" data-page="entrenador">Entrenador</a>
+  </nav>
+
+  <!-- TOAST CONTAINER -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- ===== PAGE: HOME ===== -->
+  <div class="page" id="page-home">
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Transformá tu <span class="accent">cuerpo hoy</span></h1>
+        <p>Obtené tu rutina personalizada en segundos. Respondé una encuesta rápida y empezá a entrenar como un profesional.</p>
+        <div class="hero-btns">
+          <button class="btn btn-primary" onclick="navigate('encuesta')">Empezar Encuesta ›</button>
+          <button class="btn btn-secondary" onclick="navigate('calculadora')">Calculadora Fitness</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-icon">⚡</div>
+          <div class="stat-value">46+</div>
+          <div class="stat-label">Ejercicios</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">🎯</div>
+          <div class="stat-value">4</div>
+          <div class="stat-label">Objetivos</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">📈</div>
+          <div class="stat-value">∞</div>
+          <div class="stat-label">Rutinas posibles</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="features-inner">
+        <h2 class="section-title">Todo lo que <span class="accent">necesitás</span></h2>
+        <p class="section-subtitle">Herramientas profesionales para tu gimnasio. Generá leads, fidelizá alumnos y dá un servicio premium.</p>
+        <div class="features-grid">
+          <div class="feature-card" onclick="navigate('encuesta')">
+            <div class="feature-icon" style="background:rgba(233,69,96,0.15);color:#E94560;">📋</div>
+            <h3>Encuesta Fitness</h3>
+            <p>Respondé unas preguntas y obtené tu rutina personalizada al instante.</p>
+          </div>
+          <div class="feature-card" onclick="navigate('dashboard')">
+            <div class="feature-icon" style="background:rgba(255,107,53,0.15);color:#FF6B35;">👥</div>
+            <h3>Panel de Alumnos</h3>
+            <p>Accedé a tu rutina, registrá tu progreso y mirá tus records personales.</p>
+          </div>
+          <div class="feature-card" onclick="navigate('calculadora')">
+            <div class="feature-icon" style="background:rgba(16,185,129,0.15);color:#10B981;">🧮</div>
+            <h3>Calculadora Fitness</h3>
+            <p>Calculá tu IMC, calorías diarias, peso ideal y tu 1RM.</p>
+          </div>
+          <div class="feature-card" onclick="navigate('entrenador')">
+            <div class="feature-icon" style="background:rgba(139,92,246,0.15);color:#8B5CF6;">🏋️</div>
+            <h3>Panel Entrenador</h3>
+            <p>Creá y asigná rutinas a tus alumnos. Seguí su progreso.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="gallery-inner">
+        <h2 class="section-title">Entrenamiento <span class="orange">profesional</span></h2>
+        <div class="gallery-grid" style="margin-top:48px;">
+          <div class="gallery-item">
+            <img src="https://mgx-backend-cdn.metadl.com/generate/images/1018417/2026-03-11/f03f5fe1-5e8c-4820-ad4e-e10bdca47240.png" alt="Entrenamiento" />
+          </div>
+          <div class="gallery-item">
+            <img src="https://mgx-backend-cdn.metadl.com/generate/images/1018417/2026-03-11/dc384cd2-f736-44c1-ba59-1df068ed35a7.png" alt="Equipamiento" />
+          </div>
+          <div class="gallery-item">
+            <img src="https://mgx-backend-cdn.metadl.com/generate/images/1018417/2026-03-11/37b8eb8a-0119-49a2-8ee8-74c92c78c264.png" alt="Entrenador" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2 class="section-title">¿Listo para <span class="accent">empezar</span>?</h2>
+      <p style="color:#6B7280;margin-bottom:32px;">No importa si sos principiante o avanzado. Nuestro sistema genera la rutina perfecta para vos.</p>
+      <button class="btn btn-primary" onclick="navigate('encuesta')">Crear Mi Rutina ›</button>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-logo">🏋️ FIT<span>GYM</span></div>
+        <p class="footer-copy">© 2026 FitGym. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===== PAGE: ENCUESTA ===== -->
+  <div class="page" id="page-encuesta">
+    <div class="survey-container" id="surveyContainer"></div>
+  </div>
+
+  <!-- ===== PAGE: RUTINA RESULTADO ===== -->
+  <div class="page" id="page-rutina">
+    <div class="routine-container" id="routineContainer"></div>
+  </div>
+
+  <!-- ===== PAGE: CALCULADORA ===== -->
+  <div class="page" id="page-calculadora">
+    <div class="calc-container" id="calcContainer"></div>
+  </div>
+
+  <!-- ===== PAGE: DASHBOARD ===== -->
+  <div class="page" id="page-dashboard">
+    <div class="info-page">
+      <div class="icon">🏋️</div>
+      <h2>Panel de Alumno</h2>
+      <p>Accedé a tu rutina personalizada, registrá tu progreso diario y consultá tus records personales. Primero completá la encuesta para generar tu rutina.</p>
+      <button class="btn btn-primary" onclick="navigate('encuesta')">Completar Encuesta</button>
+      <div id="dashboardContent" style="max-width:800px;margin:32px auto 0;text-align:left;"></div>
+    </div>
+  </div>
+
+  <!-- ===== PAGE: ENTRENADOR ===== -->
+  <div class="page" id="page-entrenador">
+    <div class="info-page">
+      <div class="icon">👥</div>
+      <h2>Panel de Entrenador</h2>
+      <p>Creá rutinas personalizadas para tus alumnos, asigná ejercicios por día y seguí su progreso. Usá la encuesta para generar rutinas automáticas.</p>
+      <button class="btn btn-primary" onclick="navigate('encuesta')">Generar Rutina</button>
+      <div id="trainerContent" style="max-width:800px;margin:32px auto 0;text-align:left;"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

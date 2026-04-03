@@ -84,7 +84,7 @@ img { max-width: 100%; display: block; }
 }
 .hero-bg {
   position: absolute; inset: 0; background-size: cover; background-position: center;
-  background-image: url('https://mgx-backend-cdn.metadl.com/generate/images/1018417/2026-03-11/abb78dd5-a8bf-40f4-b5fc-7e2fc97cf8d6.png');
+  background-image: url('img/fondo1.jpeg');
 }
 .hero-overlay {
   position: absolute; inset: 0;
@@ -156,6 +156,54 @@ img { max-width: 100%; display: block; }
 /* ===== CTA ===== */
 .cta { padding: 80px 16px; text-align: center; }
 .cta p { color: var(--text3); margin-bottom: 32px; }
+
+/* ===== PRICING ===== */
+.pricing { padding: 80px 16px; background: var(--bg); }
+.pricing-inner { max-width: 1000px; margin: 0 auto; text-align: center; }
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 48px; }
+.pricing-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+  padding: 32px 24px; text-align: left; position: relative; transition: all 0.3s;
+  display: flex; flex-direction: column;
+}
+.pricing-card:hover { transform: translateY(-8px); border-color: rgba(233,69,96,0.3); }
+.pricing-card.popular { border-color: var(--accent); box-shadow: 0 8px 32px rgba(233,69,96,0.15); }
+.popular-badge {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: var(--accent); color: #fff; padding: 4px 16px; border-radius: 99px;
+  font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
+}
+.pricing-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+.price { font-size: 2.5rem; font-weight: 900; color: #fff; margin-bottom: 24px; display: flex; align-items: baseline; }
+.price span { font-size: 1.2rem; margin-right: 4px; color: var(--text3); }
+.price .period { font-size: 1rem; color: var(--text3); margin-left: 4px; font-weight: 500; }
+.features-list { list-style: none; margin-bottom: 32px; flex: 1; }
+.features-list li { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 12px; font-size: 14px; color: #d1d5db; }
+.features-list li.disabled { color: var(--text3); text-decoration: line-through; }
+.features-list li .check { color: var(--green); }
+.features-list li .cross { color: var(--text3); }
+
+/* ===== LOCATION & SCHEDULE ===== */
+.location { padding: 80px 16px; background: var(--bg2); }
+.location-inner { max-width: 1000px; margin: 0 auto; }
+.location-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px;
+  background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+}
+@media (max-width: 768px) {
+  .location-grid { grid-template-columns: 1fr; }
+}
+.location-info { padding: 32px 24px; display: flex; flex-direction: column; gap: 24px; }
+.info-block { display: flex; gap: 16px; align-items: flex-start; }
+.info-icon {
+  width: 48px; height: 48px; border-radius: 12px; background: rgba(233,69,96,0.1);
+  color: var(--accent); display: flex; align-items: center; justify-content: center;
+  font-size: 24px; flex-shrink: 0;
+}
+.info-block h4 { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: #fff; }
+.info-block p { color: var(--text2); font-size: 14px; margin-bottom: 4px; }
+.location-map { min-height: 300px; height: 100%; border-left: 1px solid var(--border); }
+@media (max-width: 768px) { .location-map { border-left: none; border-top: 1px solid var(--border); } }
 
 /* ===== FOOTER ===== */
 .footer {
@@ -379,3 +427,27 @@ img { max-width: 100%; display: block; }
 .mt-6 { margin-top: 24px; }
 .mb-4 { margin-bottom: 16px; }
 .hidden { display: none !important; }
+
+/* ===== WHATSAPP FLOATING BUTTON ===== */
+.btn-whatsapp-floating {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s, background 0.3s;
+  text-decoration: none;
+}
+.btn-whatsapp-floating:hover {
+  transform: scale(1.1);
+  background: #1EBE55;
+}
